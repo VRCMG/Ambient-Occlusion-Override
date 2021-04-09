@@ -1,49 +1,43 @@
-﻿using System.Reflection;
 using MelonLoader;
+using System.Reflection;
 
 namespace PostProcessingOverrides
 {
     public static class PostProcessingOverridesSettings
     {
-        private const string SettingsCategory = "PostProcessingOverrides";
-
+        public static float AmbientOcclusion = 0f;
+        public static float Bloom = 0f;
+        public static bool ACESTonemapping = false;
+        public static float Temperature = 0f;
+        public static float Exposure = 0f;
+        public static float Saturation = 0f;
+        public static float Contrast = 0f;
         public static void RegisterSettings()
         {
-            MelonPrefs.RegisterCategory(SettingsCategory, "Post-processing overrides");
+            // Register mod settings
+            MelonPrefs.RegisterCategory("PostProcessingOverrides", "Post-processing overrides");
 
-            MelonPrefs.RegisterBool(SettingsCategory, nameof(OverridePostProcessing), false, "Override post-processing");
-            MelonPrefs.RegisterFloat(SettingsCategory, nameof(AmbientOcclusionIntensity), 0f, "Ambient occlusion intensity (0.5 recommended)");
-            MelonPrefs.RegisterFloat(SettingsCategory, nameof(BloomIntensity), 0f, "Bloom intensity (0.1 recommended)");
-            MelonPrefs.RegisterBool(SettingsCategory, nameof(TonemappingEnabled), false, "ACES tonemapping");
-            MelonPrefs.RegisterFloat(SettingsCategory, nameof(Temperature), 0f, "Temperature");
-            MelonPrefs.RegisterFloat(SettingsCategory, nameof(PostExposure), 0f, "Post-exposure");
-            MelonPrefs.RegisterFloat(SettingsCategory, nameof(Saturation), 0f, "Saturation");
-            MelonPrefs.RegisterFloat(SettingsCategory, nameof(Contrast), 0f, "Contrast");
+            MelonPrefs.RegisterFloat("PostProcessingOverrides", nameof(AmbientOcclusion), 10f, "Ambient occlusion (0.5 recommended)");
+            MelonPrefs.RegisterFloat("PostProcessingOverrides", nameof(Bloom), 0f, "Bloom (0.1 recommended)");
+            MelonPrefs.RegisterBool("PostProcessingOverrides", nameof(ACESTonemapping), false, "ACES tonemapping");
+            MelonPrefs.RegisterFloat("PostProcessingOverrides", nameof(Temperature), 0f, "Temperature");
+            MelonPrefs.RegisterFloat("PostProcessingOverrides", nameof(Exposure), 0f, "Exposure");
+            MelonPrefs.RegisterFloat("PostProcessingOverrides", nameof(Saturation), 0f, "Saturation");
+            MelonPrefs.RegisterFloat("PostProcessingOverrides", nameof(Contrast), 0f, "Contrast");
 
             OnModSettingsApplied();
         }
-
-        public static bool OverridePostProcessing;
-        public static float AmbientOcclusionIntensity;
-        public static float BloomIntensity;
-        public static bool TonemappingEnabled;
-        public static float Temperature;
-        public static float PostExposure;
-        public static float Saturation;
-        public static float Contrast;
 
         public static void OnModSettingsApplied()
         {
             foreach (var fieldInfo in typeof(PostProcessingOverridesSettings).GetFields(BindingFlags.Static | BindingFlags.Public))
             {
                 if (fieldInfo.FieldType == typeof(int))
-                    fieldInfo.SetValue(null, MelonPrefs.GetInt(SettingsCategory, fieldInfo.Name));
-
+                    fieldInfo.SetValue(null, MelonPrefs.GetInt("PostProcessingOverrides", fieldInfo.Name));
                 if (fieldInfo.FieldType == typeof(bool))
-                    fieldInfo.SetValue(null, MelonPrefs.GetBool(SettingsCategory, fieldInfo.Name));
-
+                    fieldInfo.SetValue(null, MelonPrefs.GetBool("PostProcessingOverrides", fieldInfo.Name));
                 if (fieldInfo.FieldType == typeof(float))
-                    fieldInfo.SetValue(null, MelonPrefs.GetFloat(SettingsCategory, fieldInfo.Name));
+                    fieldInfo.SetValue(null, MelonPrefs.GetFloat("PostProcessingOverrides", fieldInfo.Name));
             }
         }
     }
