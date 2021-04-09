@@ -10,7 +10,7 @@ namespace AOOverride
         public static void RegisterSettings()
         {
             // Register mod settings
-            MelonPrefs.RegisterCategory("AOOverride", "Ambient occlusion overrides");
+            MelonPrefs.RegisterCategory("AOOverride", "Ambient occlusion override");
 
             MelonPrefs.RegisterFloat("AOOverride", nameof(AmbientOcclusion), 0.5f, "Ambient occlusion (0.5 recommended)");
             MelonPrefs.RegisterBool("AOOverride", nameof(EnableAO), true, "Enable AO");
