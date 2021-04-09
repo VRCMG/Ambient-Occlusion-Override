@@ -1,5 +1,5 @@
 # PostProcessingOverrides
-Allows the post-processing settings to be overridden in VRChat.
+Allows the post-processing settings to be overridden in VRChat. Currently in development.
 
 Includes the following settings:
 * Override post-processing
