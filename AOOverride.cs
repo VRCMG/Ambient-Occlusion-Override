@@ -1,7 +1,6 @@
 using MelonLoader;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
-using UnityEngine.SceneManagement;
 
 [assembly: MelonInfo(typeof(AOOverride.AOOverride), "AOOverride", "1.0.0", "Xerolide", "https://github.com/Xerolide/Ambient-Occlusion-Override")]
 [assembly: MelonGame("VRChat", "VRChat")]
@@ -10,6 +9,7 @@ namespace AOOverride
 {
     public class AOOverride : MelonMod
     {
+
         public override void OnApplicationStart()
         {
             AOOverrideSettings.RegisterSettings();
@@ -32,15 +32,19 @@ namespace AOOverride
             occlusion.enabled.Override(AOOverrideSettings.EnableAO);
             occlusion.mode.Override(AmbientOcclusionMode.MultiScaleVolumetricObscurance);
             occlusion.intensity.Override(AOOverrideSettings.AmbientOcclusion);
+            occlusion.ambientOnly.Override(false);
+            occlusion.thicknessModifier.Override(1);
+            occlusion.color.Override(Color.black);
 
             // Create new volume
             GameObject volumeObject = new GameObject("Post-process Volume");
             volumeObject.tag = "GenVol";
             PostProcessVolume volume = volumeObject.AddComponent<PostProcessVolume>();
 
+            // Configure volums
             volume.profile.AddSettings(occlusion);
             volume.isGlobal = true;
-            volumeObject.layer = 0;
+            volume.priority = float.MaxValue;
 
             // Add post-process layer to camera
             Camera[] cameras = GameObject.FindObjectsOfType<Camera>();
