@@ -1,5 +1,5 @@
 # Ambient Occlusion Override
-Allows the ambient occlusion post-processing effect to be manually adjusted in VRChat. Ambient occlusion is a post-processing effect that adds realism and atmosphere to games. With this mod, you can enable/disable ambient occlusion and adjust the intensity of the effect.
+Allows the ambient occlusion post-processing effect to be manually adjusted in VRChat. Ambient occlusion is a post-processing effect that adds shading to crevices, corners, and other concave areas. With this mod, you can enable/disable ambient occlusion and adjust the intensity of the effect.
 
 To install this mod, you will need to download and install [MelonLoader](https://www.melonwiki.xyz). Instructions for installation can be found in the `#how-to-install` channel of the [VRChat Modding Group](https://discord.gg/2Wn3N2P) Discord server.
 
