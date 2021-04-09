@@ -2,7 +2,6 @@
 Allows the post-processing settings to be overridden in VRChat. Currently in development.
 
 Includes the following settings:
-* Override post-processing
 * Ambient occlusion intensity
 * Bloom intensity
 * ACES tonemapping
