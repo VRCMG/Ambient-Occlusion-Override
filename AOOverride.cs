@@ -10,8 +10,6 @@ namespace AOOverride
 {
     public class AOOverride : MelonMod
     {
-        private bool hasBeenLoaded = false;
-
         public override void OnApplicationStart()
         {
             AOOverrideSettings.RegisterSettings();
