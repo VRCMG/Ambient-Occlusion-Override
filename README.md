@@ -4,9 +4,9 @@ Allows the ambient occlusion post-processing effect to be manually adjusted in V
 ## Installation
 * Download and install [MelonLoader](https://www.melonwiki.xyz). Instructions for installation can be found in the `#how-to-install` channel of the [VRChat Modding Group](https://discord.gg/2Wn3N2P) Discord server.
 * Download the [latest release](https://github.com/Xerolide/Ambient-Occlusion-Override/releases/) of this mod.
-* Place this mod's .dll files in the `Mods` folder of your [game directory](https://support.steampowered.com/kb_article.php?ref=7418-YUBN-8129).
+* Place this mod's dll file in the `Mods` folder of your [game directory](https://support.steampowered.com/kb_article.php?ref=7418-YUBN-8129).
 * Download [UIExpansionKit](https://github.com/knah/VRCMods/releases/) from the VRCMods repository.
-* Place the file into same folder.
+* Place the UIExpansionKit dll into same folder.
 
 ## Usage
 Mod settings can be accessed in-game via `Settings->Mod settings`. You can toggle the ambient occlusion effect and adjust the intensity.
