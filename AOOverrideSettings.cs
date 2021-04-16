@@ -5,20 +5,20 @@ namespace AOOverride
 {
     public static class AOOverrideSettings
     {
-        public static float AmbientOcclusion = 0.5f;
-        public static bool EnableAO = true;
+        public static bool EnableAO;
+        public static float AOIntensity;
         public static void RegisterSettings()
         {
             // Register mod settings
             MelonPrefs.RegisterCategory("AOOverride", "Ambient occlusion override");
 
-            MelonPrefs.RegisterFloat("AOOverride", nameof(AmbientOcclusion), 0.5f, "Ambient occlusion (0.5 recommended)");
             MelonPrefs.RegisterBool("AOOverride", nameof(EnableAO), true, "Enable AO");
+            MelonPrefs.RegisterFloat("AOOverride", nameof(AOIntensity), 0.5f, "Ambient occlusion intensity");
 
-            OnModSettingsApplied();
+            LoadSettings();
         }
 
-        public static void OnModSettingsApplied()
+        public static void LoadSettings()
         {
             foreach (var fieldInfo in typeof(AOOverrideSettings).GetFields(BindingFlags.Static | BindingFlags.Public))
             {
@@ -31,4 +31,4 @@ namespace AOOverride
             }
         }
     }
-}
+}   
