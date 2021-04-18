@@ -13,7 +13,7 @@ namespace AOOverride
             MelonPrefs.RegisterCategory("AOOverride", "Ambient occlusion override");
 
             MelonPrefs.RegisterBool("AOOverride", nameof(EnableAO), true, "Enable AO");
-            MelonPrefs.RegisterFloat("AOOverride", nameof(AOIntensity), 0.5f, "Ambient occlusion intensity");
+            MelonPrefs.RegisterFloat("AOOverride", nameof(AOIntensity), 1f, "Ambient occlusion intensity");
 
             LoadSettings();
         }
@@ -31,4 +31,4 @@ namespace AOOverride
             }
         }
     }
-}   
+}
