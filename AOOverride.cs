@@ -93,6 +93,7 @@ namespace AOOverride
         private void UpdateVolume()
         {
             PostProcessifyCamera(); // Backup in the event that camera was modified during world load
+
             // Configure effects for volume
             occlusionConfig.enabled.Override(AOOverrideSettings.EnableAO);
             occlusionConfig.mode.Override(AmbientOcclusionMode.MultiScaleVolumetricObscurance);
