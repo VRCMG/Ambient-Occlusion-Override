@@ -9,7 +9,7 @@ Allows the ambient occlusion post-processing effect to be manually adjusted in V
 * (Optional) Download [PostProcessing](https://github.com/Arion-Kun/PostProcessing/releases) and add it to your mods folder. This will allow you to add ambient occlusion to worlds that don't include post-processing.
 
 ## Usage
-Mod settings can be accessed in-game via `Settings->Mod settings`. You can toggle the ambient occlusion effect and adjust the intensity.
+Mod settings can be accessed in-game via `Settings->Mod settings`. You can toggle the ambient occlusion effect and adjust the intensity. Consider pinning the AO toggle button to your menu barwith the star icon for easier access.
 
 ## License
 This mod is listed under the [GNU GPLv3 license](https://github.com/Xerolide/Ambient-Occlusion-Override/blob/main/LICENSE).
